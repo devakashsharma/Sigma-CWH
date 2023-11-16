@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            background-color: rgb(35, 127, 207);
+        }
+        .box1 {
+            color: rgb(243, 182, 182);
+            padding: 10px;
+            margin: 7px;
+            border: 2px solid black;
+            height: 90px;
+            box-sizing: border-box; /* it is the total size of the content means, for ex I've given the height is 100px (for content), but box sizing will made the box in 100px including - content + padding + border */
+        }
+        .box2 {
+            color: chartreuse;
+            /* margin collapse */
+            padding: 10px;
+            margin: 7px;
+            border: 2px solid black;
+            height: 90px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">This is box</div>
+    <div class="box box2">This is box2</div>
+</body>
+</html>
