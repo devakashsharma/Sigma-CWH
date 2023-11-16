@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectot</title>
+    <style>
+        /* Class Selector */
+        .one {
+            background-color: red;
+        }
+
+        /* ID Selector */
+        #two {
+            background-color: rgb(68, 27, 216);
+        }
+
+        /* Child Selector */
+        /* after the div, para must be there, if p is div>span>p then also it will not be the child */
+        div > p {
+            background-color: rgb(203, 255, 80);
+            color: rgb(138, 105, 255);
+        }
+
+        /* Descendant Selector */
+        div p {
+            background-color: black;
+            color: white;
+        }
+
+        /* Universal Selector */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* Pseudo Selector */
+        a:visited {
+            color: black;
+        }
+        a:link {
+            color: red;
+        }
+        a:active {
+            background-color: yellow;
+        }
+        a:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <p>Lorem ipsum dolor sit amet.</p>
+        Hey There
+    </div>
+    <div id="two">
+        Hello
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </article>
+    </div>
+    <a href="https://www.google.com">Google</a>
+    <a href="https://www.amazon.com">Amazon</a>
+</body>
+</html>
