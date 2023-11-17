@@ -1,0 +1,13 @@
+
+
+/* designing second paragraph */
+div :nth-child(2) {
+    background-color: #0000ff;
+    color: #ffffff;
+}
+
+/* designing first paragraph */
+div :first-child {
+    background-color: #ffff00;
+    color: #ff0000;
+}
