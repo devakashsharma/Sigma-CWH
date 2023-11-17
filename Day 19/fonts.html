@@ -5,22 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fonts</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap'); */
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
         h1 {
+            text-align: center;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            /* font-family: 'Poppins', sans-serif; */
+            font-size: 40px;
+            letter-spacing: 10px;
         }
         p {
             font-family: 'Baloo Bhai 2', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            /* font-family: 'Poppins', sans-serif; */
+            /* font-size: 2em; 1em = 8px*/
+            font-size: 20px;
             font-style: italic;
-            font-weight: 700;
-            text-decoration: overline;
+            font-weight: 600;
+            /* text-decoration: overline; */
+            line-height: 1.7;
+            /* default size of line-height is 1.2 */
+            /* and <p> tag is 16px and for <h1> is 32px */
+                
+            }
+        h2 {
+            text-transform: capitalize;
+            /* text-transform: uppercase; */
+            /* text-transform: lowercase; */
+            text-decoration: underline;
+            text-decoration-color: blue;
+            /* text-decoration-thickness: 5px; */
+            text-decoration-style: wavy;
+            /* text-decoration-line: overline; */
+            text-indent: 10px;
+        }
+
+        .lorem {
+            width: 250px;
+            border: 2px solid blue;
+            /* word-break: break-all; */
+            text-overflow: clip;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <div>
         <h1>Fonts</h1>
+        <h2>new fonts</h2>
         <p>Hello There</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel accusamus alias quod facilis dolor et consectetur! Quaerat perspiciatis quo odio.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aspernatur id perferendis, excepturi quod quia aut quas consequatur dolor aliquam cum quidem tempore aliquid architecto asperiores beatae inventore! Hic consequatur rerum vel. Ipsa deserunt nihil, laboriosam sequi hic a illo?</p>
+        <br><br><br>
+        <p class="lorem">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci commodi voluptatibus voluptates odio nesciunt ullam vitae perferendis, ut quam dignissimos quidem voluptas tempora ab quasi eveniet doloribus iste expedita explicabo!</p>
     </div>
 </body>
 </html>
