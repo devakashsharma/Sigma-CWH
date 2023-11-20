@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade</title>
+    <style>
+        /* the specificity of element selector is 1 */
+        h1 {
+            color: yellow;
+        }
+        
+        /* the specificity of class selector is 10 */
+        .green {
+            color: green;
+        }
+
+        h1.blue { /* the specificity of class + element selector is 10 + 1 = 11 */
+            color: maroon;
+        }
+
+        /* the specificity of class selector is 10 */
+        .red {
+            /* color: red !important; important can even overwrite the inline style */
+            color: red;
+        }
+
+        /* the specificity of attribute selector is 10 */
+        [data-x=a] { /* it is attribute selector*/
+            color: blue;
+        }
+        
+        /* Quick Quiz */
+        /* the specificity of this selector is 1 + 10 + 10 + 10 + 10 = 41 */
+        a.bca1.bca3[href]:hover {
+            color: orangered;
+        }
+        /* in css: rule
+        inline > ID > Class & Attribute Selector > Element >Universal Selector */
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="red green blue" data-x="a">Hello There</h1>
+    </div>
+</body>
+</html>
