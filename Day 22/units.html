@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* pixel is 190 often inch */
+        .box {
+            box-sizing: border-box;
+            border: 2px solid black;
+            /* width: 250px; */
+            /* if we want a box's size as the same as the screen size */
+            width: 100vw; /* it is viewport width*/
+        }
+        .box2 {
+            box-sizing: border-box;
+            border: 2px solid black;
+            background-color: bisque;
+            width: 80vw;
+            height: 10vh;
+            margin: auto; /* it will automaticaly add margin between left and right*/
+            /* but it will only work in block elements not in inline element */
+        }
+        .container {
+            box-sizing: border-box;
+            border: 2px solid black;
+            background-color: bisque;
+            width: 80vw;
+            height: 70vh;
+            margin: 30px auto; /* 30px is for up and down */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        this is box
+    </div>
+    <br>
+    <div class="box2">
+        this is box 2
+    </div>
+    <div class="container">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio earum eius enim voluptatem illo veritatis, perferendis qui quo ipsum, ratione laudantium accusamus dolore necessitatibus quasi.
+    </div>
+</body>
+</html>
