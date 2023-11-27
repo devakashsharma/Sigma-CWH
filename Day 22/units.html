@@ -8,7 +8,13 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        html {
+            font-size: 12px;
+        }
+        
         /* pixel is 190 often inch */
         .box {
             box-sizing: border-box;
@@ -30,9 +36,29 @@
             box-sizing: border-box;
             border: 2px solid black;
             background-color: bisque;
+            font-size: 10px;
             width: 80vw;
-            height: 70vh;
+            /* height: 70vh; */
+            min-height: 80vh;
             margin: 30px auto; /* 30px is for up and down */
+        }
+
+        .container p {
+            /* font-size: 2em;  */
+            /* it will double the font size (it also work on inherit means if container have 20 px then container p will have 40 px by 2em) */
+            
+            font-size: 2rem;
+            /* it will give the double font size of the root font size */
+            width: 50%;
+            border: 2px solid black;
+        }
+
+        .myCont {
+            width: 80vw;
+            border: 2px solid black;
+            margin: 30px auto;
+            box-sizing: border-box;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -45,7 +71,16 @@
         this is box 2
     </div>
     <div class="container">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum non necessitatibus iusto officia reiciendis id rerum, distinctio dolore vero obcaecati nihil laboriosam accusamus architecto?
+        </p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio earum eius enim voluptatem illo veritatis, perferendis qui quo ipsum, ratione laudantium accusamus dolore necessitatibus quasi.
+
+        <!-- expand to see min height of this container, the height of the container is already set but it will be expand as the content of the div would increase 
+        to check, use - lorem1000 -->
+    </div>
+    <div class="myCont">
+        Ore nowa Eren Yeager
     </div>
 </body>
 </html>
