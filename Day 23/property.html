@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            border: 2px solid black;
+            display: inline;
+            /* we cannot use upside margin and padding using inline, but we can use inline-block */
+            display: inline-block;
+            margin: 20px;
+            padding: 23px;
+            width: 400px;
+        }
+        
+        .box1 {
+            /* display: none; */
+            visibility: hidden;
+        }
+        /* .box {
+            border: 2px solid black;
+            display: inline;
+        } */
+
+        .span1 {
+            border: 2px solid black;
+        }
+
+        .span2 {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">Lorem ipsum dolor sit amet 1.</div>
+    <div class="box">Lorem ipsum dolor sit amet 2.</div>
+    <span class="span1">Lorem, ipsum dolor.</span>
+    <span class="span2">Lorem ipsum dolor sit.</span>
+
+</body>
+</html>
