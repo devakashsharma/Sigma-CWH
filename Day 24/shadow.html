@@ -9,12 +9,27 @@
             border: 2px solid black;
             margin: 20px;
             padding: 20px;
+            box-shadow: 5px 5px 15px #272626;
         }
+        .text{
+            text-shadow: 8px 4px 6px #ff0000;
+            outline: 2px solid #000000;
+            outline-offset: 12px;
+            border: 2px solid  #aa0000;
+            border-radius: 10px;
+        }
+
+        /* difference between outline and border is :
+        outline doesn't take the space of the box unlike the border who take the space of the div */
     </style>
 </head>
 <body>
     <div class="box">
         Lorem ipsum dolor sit amet.
+    </div>
+
+    <div class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor dignissimos accusantium, error alias recusandae necessitatibus.
     </div>
 </body>
 </html>
