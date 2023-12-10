@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --color: blue;
+            --seccolor: red;
+            --defpad: 20px;
+            --defopacity: 0.2;
+        }
+
+        ul {
+            display: flex;
+            /* background-color: blueviolet; */
+            background-color: var(--color);
+        }
+
+        ul li {
+            list-style: none;
+            /* padding: 10px; */
+            padding: var(--defpad);
+            border: 5px solid var(--seccolor);
+        }
+
+        ul li:first-child {
+            --color: orange;
+            background-color: var(--color, orange);
+            /* jere we can understand it as var(if, else) if  color not found then the alternate color will be in use */
+        }
+
+        .container {
+            /* background-color: brown; */
+            background-color: var(--seccolor);
+            opacity: var(--defopacity);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias magni pariatur rem ex, labore quasi eaque, saepe eum esse, hic quia incidunt amet facere modi!
+    </div>
+</body>
+</html>
