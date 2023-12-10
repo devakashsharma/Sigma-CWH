@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow</title>
+    <style>
+        .box {
+            width: 25vw;
+            height: 15vh;
+            border: 2px solid black;
+
+            overflow: auto; /* In the if overflow then it will add a scroll bar only if required of scroll bar */ 
+
+            /* overflow: scroll; */ /* it will add a scroll bar even if not required */
+
+            /* white-space: nowrap; */ /* The sentence will have no next line, means all the words will be in same line */
+
+            /* text-overflow: ellipsis; */ /* it will end the line by using "..." */
+
+            /* overflow-x: auto;
+            overflow-y: hidden; */
+
+            overflow: hidden auto; /* overflow: x y */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Oreno Wa Eren Yeager Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, natus laboriosam sequi quas ipsam hic corporis obcaecati dolores omnis. Voluptatibus atque et ipsa, tenetur voluptates itaque illo maiores. Consequatur, unde ducimus nisi error itaque voluptate hic quam, inventore, mollitia minus at. Repellat cum possimus voluptatibus.
+    </div>
+</body>
+</html>
