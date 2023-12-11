@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on CSS</title>
+    <style>
+        /* .box:first-child {
+            background-color: purple;
+        } */
+
+        /* .box:first-line {
+            color: red;
+        } */
+
+        /* .boxes  * {
+            color: blue;
+            border: 2px solid black;
+        }
+
+        p, a, li, [data-color=primary] {
+            color: red;
+            padding: 12px;
+        } */
+
+        /* .box:nth-child(odd) {
+            background-color: #ffe4c4;
+        } */
+
+        /* .box:nth-last-child(1) {
+            background-color: red;
+        } */
+
+        .boxes::after {
+            content: " Ittersai.............................. Eren";
+        }
+        
+        .boxes::before {
+            content: " Ittersai.............................. Eren";
+        }
+
+        ::selection {
+            background-color: black;
+            color: white;
+        }
+
+        .box::first-letter {
+            color: rgb(185, 130, 64);
+            font-size: 30px;
+        }
+
+        input::placeholder {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div data-color="primary" class="box">I am Div Box</div>
+        <div class="box">I am Div Box</div>
+        <div class="box">I am Div Box</div>
+        <input type="text" placeholder="Enter your name">
+    </div>
+</body>
+</html>
