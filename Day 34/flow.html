@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear</title>
+    <style>
+        img {
+            /* float: right; */
+            float: left;
+        }
+
+        .cards {
+            border: 2px solid black;
+            display: flow-root;
+        }
+
+        .card {
+            border: 2px solid red;
+        }
+
+        .card:nth-child(3) {
+            /* clear: both; */
+            clear: left;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <img src="buses.jpg" alt="Bus" width="200px">
+        <div class="card">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At incidunt eum harum illo. Perspiciatis illum alias ipsam voluptate consectetur? Sit!</div>
+        <div class="card">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quam, ex eum aliquid reiciendis voluptatibus consequuntur maxime architecto, sint voluptas voluptates quasi deleniti excepturi cumque totam veniam similique atque at nisi facere temporibus perferendis repudiandae error non. Facilis quasi quod praesentium dolor quisquam! Repellat sit hic obcaecati, molestiae, in veniam commodi rem odit, excepturi rerum quo natus repellendus ipsum alias. Suscipit fuga illo illum consequuntur veritatis repellendus corrupti itaque sit eligendi nostrum. Suscipit nam est optio beatae minus quis quibusdam veritatis dolore, autem, non facere ut earum magnam dolorem iusto sapiente hic numquam corrupti expedita. Fugit eius beatae fuga facere, dolor commodi, dicta voluptatum asperiores corrupti veritatis dolore qui iusto sit laboriosam debitis aliquam non inventore expedita, repellendus iste repudiandae. Adipisci porro quis pariatur optio officiis veritatis nisi beatae error debitis labore, quidem modi doloribus. Quo labore ullam, voluptate, laborum, excepturi totam dolore incidunt perferendis dolorem aut aliquam. Praesentium quidem voluptatem porro consequuntur fugit cumque facere, quas necessitatibus delectus ut ullam vitae autem eligendi vel, in assumenda? Earum harum officiis maxime quam sed eligendi, consequatur tenetur minus numquam a dolores! Voluptatum iste enim tempora sunt harum velit asperiores a veritatis ratione, nihil alias error ut quibusdam ea! Doloribus accusantium saepe reiciendis natus eveniet maiores fugit sunt temporibus incidunt! Accusamus, reiciendis illo quos voluptate, repudiandae, eos veniam maxime eligendi illum dicta aliquam impedit error inventore dolorem iure voluptatem asperiores voluptates. Rem, delectus, quibusdam voluptate et aspernatur hic voluptatem dolore fugit est voluptatum eius laudantium totam odio eaque enim! Suscipit, corrupti. Doloremque sed quas vitae aliquid rerum cumque nam eius amet, dignissimos at fugit ipsam nulla, odio voluptates rem blanditiis itaque suscipit pariatur earum unde qui et, deleniti dolor? Similique harum aperiam facere optio fugit omnis, odit quasi quibusdam commodi repellat vel, quis perferendis repellendus ex fuga eos dignissimos, laborum voluptate excepturi!</div>
+        <div class="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti.</div>
+    </div>
+</body>
+</html>
