@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 2</title>
+    <style>
+        .container {
+            width: 80vw;
+            height: 80vh;
+            border: 2px solid black;
+            display: grid;
+            /* grid-template-areas: "nav nav nav"
+                                "side article article"
+                                "footer footer footer"; */
+
+            /* grid-template-columns: 1fr 2fr 1fr; */
+
+            /* we can also use it */
+            /* grid-template-columns: repeat(3, 1fr); */
+            grid-template-columns: repeat(3, minmax(100px, 1fr));
+
+            /* we use justify-content when we have to so something with the entire container i.e. center all the grid or end etc */
+            /* grid-template-columns: repeat(3, 50px); */
+
+            /* justify-items and align-items will be used within cells 
+            
+            justify-content and align-content will be used within the container, div etc */
+
+            row-gap: 10px;
+            column-gap: 30px;
+            justify-items: center;
+            align-items: center;
+
+            /* it will center (justify-content + align-content) */
+            place-content: center; 
+        }
+
+        .item {
+            width: 55px;
+            height: 50px;
+            border: 2px solid red;
+        }
+
+        .item1 {
+            /* grid-area: nav;
+            background-color: aqua; */
+        }
+        .item2 {
+            /* grid-area: side;
+            background-color: antiquewhite; */
+        }
+        .item3 {
+            /* grid-area: article; */
+            /* background-color: bisque; */
+        }
+
+        .item4 {
+            /* grid-area: footer; */
+            /* background-color: burlywood; */
+        }
+        .item5 {
+            /* grid-area: footer; */
+            /* background-color: coral; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+    </div>
+</body>
+</html>
