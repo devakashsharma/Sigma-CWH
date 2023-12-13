@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <style>
+        .container {
+            width: 80vw;
+            height: 80vh;
+            background-color: bisque;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            /* animation-name: Animation;
+            animation-duration: 3s;
+            animation-iteration-count: 2;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            animation-delay: 1s; */
+            /* animation-direction: alternate-reverse; */
+
+            /* in this it will be paused at where it was before, if the box had to travel 0px to 100px and we paused it 70px then it will be paused in 70px and whenever we start, it will be start from that 70px */
+            /* animation-play-state: paused; */
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+            animation: Animation 3s ease-in-out 2s 2 forwards, Anime2 3s ease-in-out 2s infinite;
+        }
+
+        @keyframes Animation {
+            from {
+                background-color: blue;
+            }
+            to {
+                transform: translateX(400px);
+            }
+        }
+
+        @keyframes Anime2 {
+            0% {
+                transform: rotate(45deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(200deg);
+            }
+            75% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: scale(2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
