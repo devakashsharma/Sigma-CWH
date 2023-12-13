@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transition</title>
+    <style>
+        .container {
+            width: 80vw;
+            height: 60vh;
+            background-color: bisque;
+        }
+
+        .box {
+            width: 100px;
+            height: 70px;
+            background-color: aqua;
+            /* transition-property: transform, background-color; */
+
+            /* if we want to apply to all the attributes then use all */
+            /* transition-property: all;
+            transition-duration: 3s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s; */
+
+            /* there is shortcut to use it */
+            /* transition: all 3s ease-in-out 1s; */
+            transition: all 3s cubic-bezier(0.19, 0.51, 0, 0.95) 1s;
+        }
+
+        .translate {
+            transform: translateX(100px) translateY(100px) scale(2);
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box translate"></div>
+    </div>
+</body>
+</html>
