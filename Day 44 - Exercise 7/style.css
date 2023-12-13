@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI;
+}
+
+/* navigation bar */
+nav {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* nav logo design */
+.logo img {
+    width: 170px;
+}
+
+/* Hero Section */
+main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.hero-section {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.ultra-dl {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.ultra-dl h1 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.ultra-dl span {
+    font-weight: 700;
+}
+
+.ultra-desc h3 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.ultra-file {
+    width: 290px;
+    height: 40px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00B6D1;
+    border-radius: 7px;
+}
+
+.ultra-version {
+    display: flex;
+    align-items: start;
+    position: relative;
+    right: 200px;
+    margin-top: 40px;
+}
+
+.ultra-version h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0px 10px 0px 30px;
+}
+
+.ultra-version span {
+    font-size: 14px;
+}
+
+/* Country Versions */
+.main-version {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px 150px;
+}
+
+.country-version {
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 50px;
+}
+
+.bit-version {
+    display: flex;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.lang {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 9px;
+}
+
+.first {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom:55px;
+    display: flex;
+    justify-content: center;
+}
+
+.Eng-lang {
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.three-two-bit {
+    font-size: 14px;
+    background-color: #00B6D1;
+    padding: 8px;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.six-four-bit {
+    background-color: #5CB85C;
+    font-size: 14px;
+    padding: 8px;
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+/* Hovers */
+li:hover {
+    color: #5b5a5a;
+    cursor: pointer;
+}
+
+.ultra-file:hover {
+    background-color: #0296ad;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.three-two-bit:hover {
+    background-color: #0296ad;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.six-four-bit:hover {
+    background-color: #4ba94b;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
