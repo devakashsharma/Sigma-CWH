@@ -187,3 +187,10 @@ li:hover {
     transition: 0.5s ease;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 455px) {
+    .country-version  {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
