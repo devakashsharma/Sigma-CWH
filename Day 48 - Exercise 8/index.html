@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            position: relative;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #000000;
+            border: 5px solid #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0px;
+
+            /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+
+            /* animation: Bouncing 10s cubic-bezier(0, 0.17, 0, 0.85) 1s 1; */
+            animation: Bouncing 10s linear 2s infinite;
+        }
+            /* Animation */
+        @keyframes Bouncing {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            5% {
+                transform: translateY(-25vh) translateX(10vh); 
+            }
+            10% {
+                transform: translateY(-50vh) translateX(20vh);
+            }
+            15% {
+                transform: translateY(-0vh) translateX(30vh);
+            }
+            20% {
+                transform: translateY(-25vh) translateX(40vh);
+            }
+            25% {
+                transform: translateY(-50vh) translateX(50vh);
+            }
+            30% {
+                transform: translateY(-0vh) translateX(60vh);
+            }
+            35% {
+                transform: translateY(-25vh) translateX(70vh);
+            }
+            40% {
+                transform: translateY(-50vh) translateX(80vh);
+            }
+            45% {
+                transform: translateY(-0vh) translateX(90vh);
+            }
+            50% {
+                transform: translateY(-25vh) translateX(100vh);
+            }
+            55% {
+                transform: translateY(-50vh) translateX(110vh);
+            }
+            60% {
+                transform: translateY(-0vh) translateX(120vh);
+            }
+            70% {
+                transform: translateY(-25vh) translateX(130vh);
+            }
+            75% {
+                transform: translateY(-50vh) translateX(140vh);
+            }
+            80% {
+                transform: translateY(-0vh) translateX(150vh);
+            }
+            85% {
+                transform: translateY(-25vh) translateY(160vh);
+            }
+            90% {
+                transform: translateY(-50) translateX(170vh);
+            }
+            100% {
+                transform: translateY(-0vh) translateX(180vh);
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
