@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Filter</title>
+    <style>
+        img {
+            /* filter: blur(10px); */
+            margin-left: 30px;
+        }
+
+        .img1 {
+            /* filter: brightness(1.5); */
+            filter: brightness(150%);
+        }
+        .img2 {
+            /* filter: drop-shadow(16px 16px 20px rgb(77, 0, 128)); */
+            /* filter: invert(.30); */
+            filter: opacity(.30);
+        }
+        .img3 {
+            /* filter: grayscale(70%); */
+            filter: sepia(80%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="img1" src="https://staticg.sportskeeda.com/editor/2022/08/53e15-16596004347246.png?w=840" alt="Naruto" width="400px">
+
+        <img class="img2" src="https://staticg.sportskeeda.com/editor/2022/01/b50e2-16417952205524.png?w=840" alt="Tanjiro" width="400px">
+
+        <img class="img3" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/bd9f5d115357173.604d204fd18ba.png" alt="Eren" width="400px">
+
+    </div>
+</body>
+</html>
