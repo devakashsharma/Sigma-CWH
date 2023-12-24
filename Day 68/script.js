@@ -29,3 +29,5 @@ newDiv[3].closest(".container");
 
 // contains will return true if parent is containing value
 document.querySelector(".container").contains(newDiv[3]);
+
+document.querySelector("body").contains(document.querySelector(".container"));
