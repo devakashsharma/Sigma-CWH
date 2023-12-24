@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Parent and Child</title>
+    <style>
+        .box {
+            height: 50px;
+            width: 60px;
+            border: 2px solid black;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- box -->
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+        <div class="box">Box5</div>
+    </div>
+    <script>
+        document.body;
+
+        // .childNodes will give us all the child node or child
+        // .firstChild will give the first child
+        // .firstElementChild will give the first element child
+        // .lastElementChild will the last element of the child
+        // .children will return the all the html tag in the child
+        // .nextElementSibling return the next element of the html
+        // .previousElementSibling return the previous element of the html
+        // .previousSibling return the previous child, it could be #text or even commet
+        // .parentElement return the parent element
+
+        document.body.childNodes[1]
+        document.body.childNodes[1].childNodes
+        let cont = document.body.childNodes[1]
+        cont.firstChild // #text
+        cont.firstElementChild // <div class=​"box">​Ore No Wa Box1​</div>​
+        cont.lastElementChild // <div class=​"box">​Box5​</div>​
+        cont.lastElementChild.style.backgroundColor = "orange"
+        cont.lastElementChild.style.color = "white"
+        cont.lastElementChild.parentElement //<div class=​"container">​…​</div>​
+        document.body.childNodes // NodeList(6) [text, div.container, text, script, text, div#cb-connect-sidebar-main]0: text1: div.container2: text3: script4: text5: div#cb-connect-sidebar-mainlength: 6[[Prototype]]: NodeList
+        document.body.firstElementChild // <div class=​"container">​…​</div>​<!-- box --><div class=​"box">​Box1​</div>​<div class=​"box">​Box2​</div>​<div class=​"box">​Box3​</div>​<div class=​"box">​Box4​</div>​<div class=​"box" style=​"background-color:​ orange;​ color:​ white;​">​Box5​</div>​</div>​
+        document.body.firstElementChild.childNodes // NodeList(13) [text, comment, text, div.box, text, div.box, text, div.box, text, div.box, text, div.box, text]
+        document.body.firstElementChild.children // HTMLCollection(5) [div.box, div.box, div.box, div.box, div.box]
+    </script>
+</body>
+</html>
