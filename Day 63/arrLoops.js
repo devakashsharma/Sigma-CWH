@@ -14,22 +14,22 @@ arr.forEach((value, i, arr1) => {
 
 // for in loop
 let obj = {
-        a: 1,
+    a: 1,
     b: 2,
     c: 3
 }
 
 for (const key in obj) {
-        if (Object.hasOwnProperty.call(obj, key)) {
-                const element = obj[key];
-        console.log(key, element);
+    if (Object.hasOwnProperty.call(obj, key)) {
+        const element = obj[key];
+    console.log(key, element);
     }
 }
 
 // for of loop
 for (const i of arr) {
-        console.log(i);
-    }
+    console.log(i);
+}
     
 // Suppose we have to copy an array then we can use simple 'for loop' for us or we can use 'map' for more convenient
     
@@ -39,18 +39,18 @@ let nArray = [1, 4, 2, 6, 3, 7];
 let newNArray =[];
 
 for (let i = 0; i < nArray.length; i++) {
-        const element = nArray[i];
-        newNArray.push(element**2);
-    }
+    const element = nArray[i];
+    newNArray.push(element**2);
+}
     
-    console.log(newNArray); // [ 1, 16, 4, 36, 9, 49 ]
+console.log(newNArray); // [ 1, 16, 4, 36, 9, 49 ]
     
 // but there is shortcut to do it but using map function
 let newArray = nArray.map(element => {
-        // return element**2;
-        return element;
-    })
-    console.log(newArray); // [ 1, 4, 2, 6, 3, 7 ]
+    // return element**2;
+    return element;
+})
+console.log(newArray); // [ 1, 4, 2, 6, 3, 7 ]
     
 // if we also want the index and value then we can use this
 let newArrays = nArray.map((element, index, arr2) => {
