@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Event Listener and DOM</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- we can create a custom attribute by using 'data-' -->
+        <div class="box" style="color: brown;" data-createdBy="Akash">Ore no wa Box no hitotsu desu</div>
+        <div class="box">Ore no wa Box no futatsu desu</div>
+    </div>
+
+    <script>
+        document.querySelector(".box"); // <div class=​"box">​Ore no wa Box desu​</div>​
+        document.querySelector(".box").innerHTML // 'Ore no wa Box desu'
+        document.querySelector(".container").innerHTML // '\n        <div class="box">Ore no wa Box desu</div>\n   
+        document.querySelector(".container").innerText // 'Ore no wa Box no hitotsu desu\nOre no wa Box no futatsu desu'
+        document.querySelector(".container").outerHTML // '<div class="container">\n        <div class="box">Ore no wa Box no hitotsu desu</div>\n        <div class="box">Ore no wa Box no futatsu desu</div>\n    </div>'
+        document.querySelector(".container").tagName // 'DIV'
+        document.querySelector(".container").nodeName // 'DIV'
+        document.querySelector(".container").textContent // '\n        Ore no wa Box no hitotsu desu\n        Ore no wa Box no futatsu desu\n    '
+        document.querySelector(".container").hidden; // false
+        // document.querySelector(".container").hidden = true; // it will hide the container
+        document.querySelector(".box").innerHTML = "oreNoWa Boxu desu" // 'Ore no wa Box no hitotsu desu\nOre no wa Box no futatsu desu'
+        document.querySelector(".box").hasAttribute('style') // true
+        document.querySelector(".box").getAttribute('style') // 'color: brown;'
+        document.querySelector(".box").setAttribute('style', "color: red");
+
+        // .attributes will print all the attributes
+        document.querySelector(".box").attributes //NamedNodeMap {0: class, 1: style, class: class, style: style, length: 2}0: class1: styleclass: classstyle: stylebaseURI: "http://127.0.0.1:3000/Sigma-CWH/Day%2071/event.html"childNodes: NodeList []firstChild: nullisConnected: falselastChild: nulllocalName: "style"name: "style"namespaceURI: nullnextSibling: nullnodeName: "style"nodeType: 2nodeValue: "color: red"ownerDocument: documentownerElement: div.boxparentElement: nullparentNode: nullprefix: nullpreviousSibling: nullspecified: truetextContent: "color: red"value: "color: red"[[Prototype]]: Attrlength: 2[[Prototype]]: NamedNodeMap
+
+        // document.querySelector(".box").removeAttribute('style') // it will remove the style
+
+        // it give us power to change the text or anything related to desgin on the page, u gonna love this
+        // document.designMode = "on" // 'on'
+        document.querySelector(".box").dataset // DOMStringMap {createdby: 'Akash'}
+        let div = document.createElement("div");
+        div.innerHTML = "Watashi no godfather wa Akash desu";
+        div.setAttribute("class", "jsDiv");
+        document.querySelector(".container").append(div);
+
+        // we have more ways to insert a node/element
+        // .append - add at the end of the node (inside)
+        // .prepend - add at the begaining of the node (inside)
+        // .before - it will add before and outside of the node
+        // .after - it will add after and outside of the node
+        // .replaceWith - it will replace the given node/element
+
+        // we can insert a string by using adjacent html
+        let newCont = document.querySelector(".container");
+        newCont.insertAdjacentHTML("afterbegin", "<b> Ore no wa Kawaii desu ne </b>");
+        // newCont.insertAdjacentHTML("afterend", "<b> Ore no wa Kawaii desu ne </b>");
+        // newCont.insertAdjacentHTML("beforebegin", "<b> Ore no wa Kawaii desu ne </b>");
+        // newCont.insertAdjacentHTML("beforeend", "<b> Ore no wa Kawaii desu ne </b>");
+
+        // to remove any element
+        // document.querySelector(".box").remove(); // it will remove the first box
+
+        document.querySelector(".container").classList // DOMTokenList ['container', value: 'container']
+        document.querySelector(".container").className // 'container'
+
+        document.querySelector(".container").classList.add("newClassNameAdded");
+        document.querySelector(".container").classList.remove("newClassNameAdded");
+
+        document.querySelector(".container").classList.toggle("red") // true, add the red
+        document.querySelector(".container").classList.toggle("red") // false, remove the red
+        document.querySelector(".container").classList.toggle("red") // true, add the red
+
+        
+    </script>
+</body>
+</html>
