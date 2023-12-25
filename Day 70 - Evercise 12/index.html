@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .box {
+            height: 45px;
+            width: 45px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- generate random color to the div -->
+    <div class="container">
+        <div id="div1" class="box box1">Box 1</div>
+        <div id="div2" class="box box2">Box 2</div>
+        <div id="div3" class="box box3">Box 3</div>
+        <div id="div4" class="box box4">Box 4</div>
+        <div id="div5" class="box box5">Box 5</div>
+    </div>
+
+    <script>
+        let forBox1 = Math.random();
+        let forBox2 = Math.random();
+        let forBox3 = Math.random();
+        let forBox4 = Math.random();
+        let forBox5 = Math.random();
+
+        // Box 1
+        if (forBox1 <= 0.33) {
+            document.getElementById("div1").style.backgroundColor = "red";
+        }
+        else if (forBox1 <= 0.66 && forBox1 > 0.33) {
+            document.getElementById("div1").style.backgroundColor = "yellow";
+        }
+        else {
+            document.getElementById("div1").style.backgroundColor = "blue";
+        }
+        
+        // Box 2
+        if (forBox2 <= 0.33) {
+            document.getElementById("div2").style.backgroundColor = "lightgreen";
+        }
+        else if (forBox2 <= 0.66 && forBox2 > 0.33) {
+            document.getElementById("div2").style.backgroundColor = "lightblue";
+        }
+        else {
+            document.getElementById("div2").style.backgroundColor = "pink";
+        }
+
+        // Box 3
+        if (forBox3 <= 0.33) {
+            document.getElementById("div3").style.backgroundColor = "orange";
+        }
+        else if (forBox3 <= 0.66 && forBox3 > 0.33) {
+            document.getElementById("div3").style.backgroundColor = "voilet";
+        }
+        else {
+            document.getElementById("div3").style.backgroundColor = "gray";
+        }
+
+        // Box 4
+        if (forBox4 <= 0.33) {
+            document.getElementById("div4").style.backgroundColor = "coral";
+        }
+        else if (forBox4 <= 0.66 && forBox4 > 0.33) {
+            document.getElementById("div4").style.backgroundColor = "aqua";
+        }
+        else {
+            document.getElementById("div4").style.backgroundColor = "brown";
+        }
+
+        // Box 5
+        if (forBox5 <= 0.33) {
+            document.getElementById("div5").style.backgroundColor = "purple";
+        }
+        else if (forBox5 <= 0.66 && forBox5 > 0.33) {
+            document.getElementById("div5").style.backgroundColor = "gold";
+        }
+        else {
+            document.getElementById("div5").style.backgroundColor = "darkblue";
+        }
+
+    </script>
+</body>
+</html>
