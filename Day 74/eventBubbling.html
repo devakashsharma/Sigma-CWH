@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubblin JS</title>
+    <style>
+        .container {
+            background-color: yellow;
+            padding: 14px;
+            margin: 14px;
+            border: 2px solid black;
+            cursor: copy;
+        }
+        .childContainer {
+            background-color: rgb(250, 250, 141);
+            padding: 14px;
+            margin: 14px;
+            border: 2px solid black;
+            cursor: grab;
+        }
+        .child {
+            background-color: rgb(255, 255, 214);
+            padding: 14px;
+            margin: 14px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="childContainer">
+            <div class="child"></div>
+        </div>
+    </div>
+
+    <script>
+
+        
+        // document.querySelector(".child").addEventListener("click", () => {
+            //     alert("Child");
+            // })
+            
+        // document.querySelector(".childContainer").addEventListener("click", () => {
+            //     alert("Child Container");
+        // })
+            
+        // document.querySelector(".container").addEventListener("click", () => {
+            //     alert("Container");
+        // })
+                
+        // so if i click the child then all 3 get active, so in order to stop Propagation we will so this
+        
+        document.querySelector(".child").addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("Child");
+        })
+
+        document.querySelector(".childContainer").addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("Child Container");
+        })
+
+        document.querySelector(".container").addEventListener("click", () => {
+            alert("Container");
+        })
+
+        function getRandomColor(){
+            let val1 = Math.ceil(0 + Math.random()* 255);
+            let val2 = Math.ceil(0 + Math.random()* 255);
+            let val3 = Math.ceil(0 + Math.random()* 255);
+            return `rgb(${val1}, ${val2}, ${val3})`
+        }
+
+        // let a = setInterval(() => {
+        //     document.querySelector(".child").style.backgroundColor = getRandomColor();
+        // }, 1000)
+        
+        // clearInterval(a);
+        
+        // if we want that only one time the setIntenval work then we can use
+        let a = setTimeout(() => {
+            document.querySelector(".child").style.backgroundColor = getRandomColor();
+        }, 1000);
+        clearTimeout(a);
+    </script>
+</body>
+</html>
