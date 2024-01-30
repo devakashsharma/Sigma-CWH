@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try and Catch</title>
+  </head>
+  <body>
+    <script>
+        // The prompt return a string not the number, so we need to first convert it into a number by using parseInt()
+        let a = prompt("Enter first number");
+        let b = prompt("Enter second number");
+
+        if (isNaN(a) || isNaN(b)) {
+            // we can throw a custom error by using throw
+            throw SyntaxError("Sorry this is not allowed");
+        }
+
+        function main() {
+            let sum = parseInt(a) + parseInt(b);
+
+            try {
+                console.log(`Addition of ${a} and ${b} is ${sum*x}`);
+            } catch (error) {
+                console.log(`Error! ${error.name}`);
+                console.log(`Error! ${error.message}`);
+            } finally {
+                console.log(`Final Message`);
+            }
+            // finally mainly use in function when we use return then the function stopped at that point, but if we use finally then the function will stopped but then also it will print finally
+        }
+        // the thing is the try and catch works in sync. means if we use async and await then try/catch will not work
+    </script>
+  </body>
+</html>
