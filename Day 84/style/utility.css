@@ -1,0 +1,49 @@
+/* borders */
+/* .white-border {
+    border: 2px solid white;
+    margin: 2px;
+} */
+
+/* background colors */
+.bg-black {
+    background-color: #000000;
+}
+
+.bg-grey {
+    background-color: #121212;
+}
+
+.bg-light-grey {
+    background-color: #101010;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+/* display & positions */
+.flex {
+    display: flex;
+}
+
+.justify-content {
+    justify-content: center;
+}
+
+.item-center {
+    align-items: center;
+}
+
+/* radius */
+.radius {
+    border-radius: 10px;
+}
+
+/* margin & paddings */
+.mrg {
+    margin: 7px;
+}
+
+.padd {
+    padding: 20px;
+}

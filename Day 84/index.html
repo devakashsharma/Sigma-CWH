@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music</title>
+
+    <!-- adding style - 1 -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- adding style - 2 -->
+    <link rel="stylesheet" href="./style/utility.css">
+
+    <!-- adding fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container flex bg-black">
+
+        <!-- left side of the page. -->
+        <div class="left-side white-border">
+            <div class="home bg-grey radius mrg  padd">
+                <div class="logo-svg"><img class="invert" src="./icons/logo.svg" alt="Spotify"></div>
+                <ul>
+                    <li><img class="invert" src="./icons/home.svg" alt="Home">Home</li>
+                    <li><img class="invert" src="./icons/search.svg" alt="Home">Search</li>
+                </ul>
+            </div>
+            <div class="library bg-grey radius mrg padd">
+                <div class="heading">
+                    <img class="invert" src="./icons/library.svg" alt="library">
+                    <p>Your Library</p>
+                    <img class="invert plus" src="./icons/plus.svg" alt="">
+                </div>
+                
+                <!-- footer -->
+                <div class="left-footer">
+                    <div><a href="https://www.spotify.com/jp/legal/">Legal</a></div>
+                    <div><a href="https://www.spotify.com/jp/privacy/">Privacy Center</a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/">Privacy Policy</a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/cookies-policy/">Cookies</a></div>
+                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3">About Ads</a></div>
+                    <div><a href="https://www.spotify.com/jp/accessibility/">Accessibility</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- right side of the page -->
+        <div class="right-side bg-grey radius">
+            <div class="right-heading">
+
+                <div class="right-nav">
+                    <!-- left arrow -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                    <!-- right arrow -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="buttons">
+                    <button>Sign up</button>
+                    <button>Login</button>
+                </div>
+            </div>
+            <div class="spotify-playlist">
+                <h1>Spotify Playlists</h1>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="./assets/dwf.jpeg" alt="dinner">
+                        <h3>Dinner with Friends</h3>
+                        <p>The perfect soundtrack to those long nights over dinner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
