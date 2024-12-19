@@ -9,8 +9,8 @@ const Manager = () => {
   useEffect(() => {
     let passwords = localStorage.getItem("passwords");
     if (passwords) {
-      setPasswordArray = JSON.parse(passwords);
-    } 
+      setPasswordArray(JSON.parse(passwords));
+    }
   }, []);
 
   const showPassword = () => {
@@ -23,7 +23,7 @@ const Manager = () => {
 
   const savePassword = () => {
     setPasswordArray([...passwordArray, form]);
-    localStorage.setItem('passwords', JSON.stringify([...passwordArray, form]));
+    localStorage.setItem("passwords", JSON.stringify([...passwordArray, form]));
     console.log([...passwordArray, form]);
   };
 
@@ -39,7 +39,7 @@ const Manager = () => {
       </div>
 
       {/* Main Container */}
-      <div className="mycontainer w-3/4 mx-auto flex flex-col items-center gap-4">
+      <div className="mycontainer w-3/4 flex flex-col items-center gap-4">
         {/* Title */}
         <h1 className="text-4xl font-bold flex items-center">
           <span className="text-green-500">&lt;</span>
@@ -110,6 +110,35 @@ const Manager = () => {
             ></lord-icon>
             Add Password
           </button>
+        </div>
+
+        <div className="passwords flex flex-col justify-center items-start w-full gap-4">
+          <h2 className="text-2xl font-semibold text-green-900">
+            Your Passwords
+          </h2>
+          {passwordArray.length === 0 && <div>No Passwords to show</div>}
+          {passwordArray.length != 0 && (
+            <table className="w-full table-auto border border-green-500 bg-green-100 overflow-hidden rounded-md text-left">
+              <thead className="bg-green-800 text-white">
+                <tr>
+                  <th className="px-4 py-2">Site</th>
+                  <th className="px-4 py-2">Username</th>
+                  <th className="px-4 py-2">Password</th>
+                </tr>
+              </thead>
+              <tbody>
+                {passwordArray.map((item, index) => {
+                  return <tr key={index}>
+                    <td className="px-4 py-2 border-t">
+                        <a href={item.site} target="_blank" rel="noopener noreferrer">{item.site}</a>
+                    </td>
+                    <td className="px-4 py-2 border-t">{item.username}</td>
+                    <td className="px-4 py-2 border-t">{item.password}</td>
+                  </tr>;
+                })}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </>
