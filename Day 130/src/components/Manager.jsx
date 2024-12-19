@@ -1,5 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { v4 as uuidv4 } from "uuid";
 
 const Manager = () => {
   const ref = useRef();
@@ -16,9 +18,18 @@ const Manager = () => {
   }, []);
 
   const copyText = (text) => {
+    toast("Copied to clipboard!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
     navigator.clipboard.writeText(text);
-  }
-  
+  };
 
   const showPassword = () => {
     passwordRef.current.type = "text";
@@ -32,9 +43,23 @@ const Manager = () => {
   };
 
   const savePassword = () => {
-    setPasswordArray([...passwordArray, form]);
-    localStorage.setItem("passwords", JSON.stringify([...passwordArray, form]));
+    setPasswordArray([...passwordArray, {...form, id: uuidv4()}]);
+    localStorage.setItem("passwords", JSON.stringify([...passwordArray, {...form, id: uuidv4()}]));
     console.log([...passwordArray, form]);
+  };
+
+  const deletePassword = (id) => {
+    console.log(`Delete password ${id}`);
+    setPasswordArray(passwordArray.filter((item) => item.id != id));
+    localStorage.setItem("passwords", JSON.stringify(passwordArray.filter((item) => item.id != id)));
+//     console.log([...passwordArray, form]);
+  };
+
+  const editPassword = (id) => {
+    console.log(`Editing password ${id}`);
+//     setPasswordArray([...passwordArray, {...form, id: uuidv4()}]);
+//     localStorage.setItem("passwords", JSON.stringify([...passwordArray, form]));
+//     console.log([...passwordArray, form]);
   };
 
   const handleChange = (e) => {
@@ -43,6 +68,18 @@ const Manager = () => {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-green-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
         <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div>
@@ -112,14 +149,14 @@ const Manager = () => {
           {/* Add Button */}
           <button
             onClick={savePassword}
-            className="flex justify-center items-center bg-green-500 text-white rounded-full gap-2 px-4 py-2 border border-green-700 hover:bg-green-400"
+            className="flex justify-center items-center bg-green-500 text-black font-semibold rounded-full gap-2 px-4 py-2 border border-green-700 hover:bg-green-400"
           >
             <lord-icon
               src="https://cdn.lordicon.com/hqymfzvj.json"
               trigger="hover"
               className="mr-2"
             ></lord-icon>
-            Add Password
+            Save Password
           </button>
         </div>
 
@@ -135,6 +172,7 @@ const Manager = () => {
                   <th className="px-4 py-2">Site</th>
                   <th className="px-4 py-2">Username</th>
                   <th className="px-4 py-2">Password</th>
+                  <th className="px-4 py-2 text-center">Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,7 +190,12 @@ const Manager = () => {
                           >
                             {item.site}
                           </a>
-                          <i className="fa-regular fa-copy cursor-pointer" onClick={() =>{copyText(item.site)}}></i>
+                          <i
+                            className="fa-regular fa-copy cursor-pointer"
+                            onClick={() => {
+                              copyText(item.site);
+                            }}
+                          ></i>
                         </div>
                       </td>
 
@@ -160,7 +203,12 @@ const Manager = () => {
                         {/* Username */}
                         <div className="flex items-centerr justify-between gap-2">
                           <span>{item.username}</span>
-                          <i className="fa-regular fa-copy cursor-pointer" onClick={() =>{copyText(item.username)}}></i>
+                          <i
+                            className="fa-regular fa-copy cursor-pointer"
+                            onClick={() => {
+                              copyText(item.username);
+                            }}
+                          ></i>
                         </div>
                       </td>
 
@@ -168,8 +216,21 @@ const Manager = () => {
                         {/* Password */}
                         <div className="flex items-center justify-between gap-2">
                           <span>{item.password}</span>
-                          <i className="fa-regular fa-copy cursor-pointer" onClick={() =>{copyText(item.password)}}></i>
+                          <i
+                            className="fa-regular fa-copy cursor-pointer"
+                            onClick={() => {
+                              copyText(item.password);
+                            }}
+                          ></i>
                         </div>
+                      </td>
+                      <td className="px-4 py-2 border-t text-center">
+                        <span onClick={() => {editPassword(item.id)}}>
+                          <i className="fa-solid fa-pen-to-square cursor-pointer"></i>
+                        </span>
+                        <span onClick={() => {deletePassword(item.id)}}>
+                          <i className="fa-solid fa-trash cursor-pointer pl-4"></i>
+                        </span>
                       </td>
                     </tr>
                   );
