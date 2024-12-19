@@ -3,6 +3,8 @@ import { useRef, useState, useEffect } from "react";
 
 const Manager = () => {
   const ref = useRef();
+  const passwordRef = useRef();
+
   const [form, setform] = useState({ site: "", username: "", password: "" });
   let [passwordArray, setPasswordArray] = useState([]);
 
@@ -13,11 +15,19 @@ const Manager = () => {
     }
   }, []);
 
+  const copyText = (text) => {
+    navigator.clipboard.writeText(text);
+  }
+  
+
   const showPassword = () => {
+    passwordRef.current.type = "text";
     if (ref.current.src.includes("public/icons/eyecross.png")) {
       ref.current.src = "/public/icons/eye.png";
+      passwordRef.current.type = "password";
     } else {
       ref.current.src = "/public/icons/eyecross.png";
+      passwordRef.current.type = "text";
     }
   };
 
@@ -79,7 +89,8 @@ const Manager = () => {
               <input
                 value={form.password}
                 onChange={handleChange}
-                type="text"
+                type="password"
+                ref={passwordRef}
                 name="password"
                 placeholder="Enter password"
                 className="rounded-full border border-green-500 px-4 py-1 w-full"
@@ -128,13 +139,40 @@ const Manager = () => {
               </thead>
               <tbody>
                 {passwordArray.map((item, index) => {
-                  return <tr key={index}>
-                    <td className="px-4 py-2 border-t">
-                        <a href={item.site} target="_blank" rel="noopener noreferrer">{item.site}</a>
-                    </td>
-                    <td className="px-4 py-2 border-t">{item.username}</td>
-                    <td className="px-4 py-2 border-t">{item.password}</td>
-                  </tr>;
+                  return (
+                    <tr key={index}>
+                      <td className="px-4 py-2 border-t w-1/3">
+                        {/* Site */}
+                        <div className="flex items-centerr justify-between gap-2">
+                          <a
+                            href={item.site}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-500 underline"
+                          >
+                            {item.site}
+                          </a>
+                          <i className="fa-regular fa-copy cursor-pointer" onClick={() =>{copyText(item.site)}}></i>
+                        </div>
+                      </td>
+
+                      <td className="px-4 py-2 border-t">
+                        {/* Username */}
+                        <div className="flex items-centerr justify-between gap-2">
+                          <span>{item.username}</span>
+                          <i className="fa-regular fa-copy cursor-pointer" onClick={() =>{copyText(item.username)}}></i>
+                        </div>
+                      </td>
+
+                      <td className="px-4 py-2 border-t">
+                        {/* Password */}
+                        <div className="flex items-center justify-between gap-2">
+                          <span>{item.password}</span>
+                          <i className="fa-regular fa-copy cursor-pointer" onClick={() =>{copyText(item.password)}}></i>
+                        </div>
+                      </td>
+                    </tr>
+                  );
                 })}
               </tbody>
             </table>
