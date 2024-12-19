@@ -43,23 +43,32 @@ const Manager = () => {
   };
 
   const savePassword = () => {
-    setPasswordArray([...passwordArray, {...form, id: uuidv4()}]);
-    localStorage.setItem("passwords", JSON.stringify([...passwordArray, {...form, id: uuidv4()}]));
+    setPasswordArray([...passwordArray, { ...form, id: uuidv4() }]);
+    localStorage.setItem(
+      "passwords",
+      JSON.stringify([...passwordArray, { ...form, id: uuidv4() }])
+    );
     console.log([...passwordArray, form]);
+    setform({ site: "", username: "", password: "" });
   };
 
   const deletePassword = (id) => {
     console.log(`Delete password ${id}`);
-    setPasswordArray(passwordArray.filter((item) => item.id != id));
-    localStorage.setItem("passwords", JSON.stringify(passwordArray.filter((item) => item.id != id)));
-//     console.log([...passwordArray, form]);
+    let cnfirm = confirm("Are you sure you want to delete?");
+
+    if (cnfirm) {
+      setPasswordArray(passwordArray.filter((item) => item.id != id));
+      localStorage.setItem(
+        "passwords",
+        JSON.stringify(passwordArray.filter((item) => item.id != id))
+      );
+    }
   };
 
   const editPassword = (id) => {
     console.log(`Editing password ${id}`);
-//     setPasswordArray([...passwordArray, {...form, id: uuidv4()}]);
-//     localStorage.setItem("passwords", JSON.stringify([...passwordArray, form]));
-//     console.log([...passwordArray, form]);
+    setform(passwordArray.filter((item) => item.id === id)[0]);
+    setPasswordArray(passwordArray.filter((item) => item.id != id));
   };
 
   const handleChange = (e) => {
@@ -225,10 +234,18 @@ const Manager = () => {
                         </div>
                       </td>
                       <td className="px-4 py-2 border-t text-center">
-                        <span onClick={() => {editPassword(item.id)}}>
+                        <span
+                          onClick={() => {
+                            editPassword(item.id);
+                          }}
+                        >
                           <i className="fa-solid fa-pen-to-square cursor-pointer"></i>
                         </span>
-                        <span onClick={() => {deletePassword(item.id)}}>
+                        <span
+                          onClick={() => {
+                            deletePassword(item.id);
+                          }}
+                        >
                           <i className="fa-solid fa-trash cursor-pointer pl-4"></i>
                         </span>
                       </td>
