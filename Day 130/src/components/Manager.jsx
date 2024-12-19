@@ -1,8 +1,17 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const Manager = () => {
   const ref = useRef();
+  const [form, setform] = useState({ site: "", username: "", password: "" });
+  let [passwordArray, setPasswordArray] = useState([]);
+
+  useEffect(() => {
+    let passwords = localStorage.getItem("passwords");
+    if (passwords) {
+      setPasswordArray = JSON.parse(passwords);
+    } 
+  }, []);
 
   const showPassword = () => {
     if (ref.current.src.includes("public/icons/eyecross.png")) {
@@ -13,8 +22,14 @@ const Manager = () => {
   };
 
   const savePassword = () => {
-    //
-  }
+    setPasswordArray([...passwordArray, form]);
+    localStorage.setItem('passwords', JSON.stringify([...passwordArray, form]));
+    console.log([...passwordArray, form]);
+  };
+
+  const handleChange = (e) => {
+    setform({ ...form, [e.target.name]: e.target.value });
+  };
 
   return (
     <>
@@ -41,7 +56,10 @@ const Manager = () => {
         <div className="text-black flex flex-col p-4 gap-6 items-center w-full">
           {/* Input 1 */}
           <input
+            value={form.site}
+            onChange={handleChange}
             type="text"
+            name="site"
             placeholder="Enter website URL"
             className="rounded-full border border-green-500 px-4 py-1 w-full"
           />
@@ -49,14 +67,20 @@ const Manager = () => {
           {/* Input 2 and Input 3 in a Row */}
           <div className="flex w-full gap-4">
             <input
+              value={form.username}
+              onChange={handleChange}
               type="text"
+              name="username"
               placeholder="Enter username"
               className="rounded-full border border-green-500 px-4 py-1 w-full"
             />
 
             <div className="relative w-full">
               <input
+                value={form.password}
+                onChange={handleChange}
                 type="text"
+                name="password"
                 placeholder="Enter password"
                 className="rounded-full border border-green-500 px-4 py-1 w-full"
               />
@@ -75,7 +99,10 @@ const Manager = () => {
           </div>
 
           {/* Add Button */}
-          <button onClick={savePassword} className="flex justify-center items-center bg-green-500 text-white rounded-full gap-2 px-4 py-2 border border-green-700 hover:bg-green-400">
+          <button
+            onClick={savePassword}
+            className="flex justify-center items-center bg-green-500 text-white rounded-full gap-2 px-4 py-2 border border-green-700 hover:bg-green-400"
+          >
             <lord-icon
               src="https://cdn.lordicon.com/hqymfzvj.json"
               trigger="hover"
