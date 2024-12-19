@@ -204,6 +204,7 @@ const Manager = () => {
                             onClick={() => {
                               copyText(item.site);
                             }}
+                            title="Copy URL"
                           ></i>
                         </div>
                       </td>
@@ -217,6 +218,7 @@ const Manager = () => {
                             onClick={() => {
                               copyText(item.username);
                             }}
+                            title="Copy username"
                           ></i>
                         </div>
                       </td>
@@ -230,6 +232,7 @@ const Manager = () => {
                             onClick={() => {
                               copyText(item.password);
                             }}
+                            title="Copy password"
                           ></i>
                         </div>
                       </td>
@@ -239,14 +242,14 @@ const Manager = () => {
                             editPassword(item.id);
                           }}
                         >
-                          <i className="fa-solid fa-pen-to-square cursor-pointer"></i>
+                          <i className="fa-solid fa-pen-to-square cursor-pointer" title="Edit password"></i>
                         </span>
                         <span
                           onClick={() => {
                             deletePassword(item.id);
                           }}
                         >
-                          <i className="fa-solid fa-trash cursor-pointer pl-4"></i>
+                          <i className="fa-solid fa-trash cursor-pointer pl-4" title="Delete password"></i>
                         </span>
                       </td>
                     </tr>
