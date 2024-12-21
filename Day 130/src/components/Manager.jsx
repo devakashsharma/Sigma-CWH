@@ -122,7 +122,7 @@ const Manager = () => {
       </div>
 
       {/* Main Container */}
-      <div className="mycontainer w-3/4 flex flex-col items-center gap-4">
+      <div className="px-2 sm:px-4 md:mycontainer sm:w-full md:w-3/4 lg:w-2/3 flex flex-col items-center md:justify-center gap-4 min-h-screen">
         {/* Title */}
         <h1 className="text-4xl font-bold flex items-center">
           <span className="text-green-500">&lt;</span>
@@ -144,18 +144,20 @@ const Manager = () => {
             type="text"
             name="site"
             placeholder="Enter website URL"
-            className="rounded-full border border-green-500 px-4 py-1 w-full"
+            id="site"
+            className="rounded-full border border-green-500 px-4 py-2 w-full"
           />
 
           {/* Input 2 and Input 3 in a Row */}
-          <div className="flex w-full gap-4">
+          <div className="flex flex-col md:flex-row w-full gap-4">
             <input
               value={form.username}
               onChange={handleChange}
               type="text"
               name="username"
               placeholder="Enter username"
-              className="rounded-full border border-green-500 px-4 py-1 w-full"
+              id="username"
+              className="rounded-full border border-green-500 px-4 py-2 w-full"
             />
 
             <div className="relative w-full">
@@ -166,10 +168,11 @@ const Manager = () => {
                 ref={passwordRef}
                 name="password"
                 placeholder="Enter password"
-                className="rounded-full border border-green-500 px-4 py-1 w-full"
+                id="password"
+                className="rounded-full border border-green-500 px-4 py-2 w-full"
               />
               <span
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-green-600 cursor-pointer"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-sm text-green-600 cursor-pointer"
                 onClick={showPassword}
               >
                 <img
@@ -185,7 +188,7 @@ const Manager = () => {
           {/* Add Button */}
           <button
             onClick={savePassword}
-            className="flex justify-center items-center bg-green-500 text-black font-semibold rounded-full gap-2 px-4 py-2 border border-green-700 hover:bg-green-400"
+            className="flex justify-center items-center bg-green-500 text-black font-semibold rounded-full gap-2 px-6 py-2 border border-green-700 hover:bg-green-400 w-full md:w-auto"
           >
             <lord-icon
               src="https://cdn.lordicon.com/hqymfzvj.json"
@@ -202,22 +205,23 @@ const Manager = () => {
           </h2>
           {passwordArray.length === 0 && <div>No Passwords to show</div>}
           {passwordArray.length != 0 && (
-            <table className="w-full table-auto border border-green-500 bg-green-100 overflow-hidden rounded-md text-left">
-              <thead className="bg-green-800 text-white">
-                <tr>
-                  <th className="px-4 py-2">Site</th>
-                  <th className="px-4 py-2">Username</th>
-                  <th className="px-4 py-2">Password</th>
-                  <th className="px-4 py-2 text-center">Delete</th>
-                </tr>
-              </thead>
+            <div className="w-full overflow-x-auto">
+            <table className="table-auto w-full border border-green-500 bg-green-100 overflow-hidden rounded-md text-left">
+            <thead className="bg-green-800 text-white">
+          <tr>
+            <th className="px-4 py-2">Site</th>
+            <th className="px-4 py-2">Username</th>
+            <th className="px-4 py-2">Password</th>
+            <th className="px-4 py-2 text-center">Actions</th>
+          </tr>
+        </thead>
               <tbody>
                 {passwordArray.map((item, index) => {
                   return (
                     <tr key={index}>
-                      <td className="px-4 py-2 border-t w-1/3">
+                      <td className="px-4 py-2 border-t">
                         {/* Site */}
-                        <div className="flex items-centerr justify-between gap-2">
+                        <div className="flex items-center gap-2">
                           <a
                             href={item.site}
                             target="_blank"
@@ -284,6 +288,7 @@ const Manager = () => {
                 })}
               </tbody>
             </table>
+            </div>
           )}
         </div>
       </div>
