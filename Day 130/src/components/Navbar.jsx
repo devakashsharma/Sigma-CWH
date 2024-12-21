@@ -16,9 +16,20 @@ const Navbar = () => {
         </li>
       </ul> */}
       <button className="bg-green-900 rounded-xl px-3 hover:bg-green-800">
-        <a href="https://github.com/devakashsharma" className="flex justify-center items-center" target="_blank" rel="noopener noreferrer">
-        <img src="public/icons/github.svg" alt="github" width={20} className="m-2 invert" />
-        <span className="text-white text-sm font-bold">Github</span></a>
+        <a
+          href="https://github.com/devakashsharma"
+          className="flex justify-center items-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="public/icons/github.svg"
+            alt="github"
+            width={20}
+            className="m-2 invert"
+          />
+          <span className="text-white text-sm font-bold">Github</span>
+        </a>
       </button>
     </nav>
   );

@@ -206,88 +206,94 @@ const Manager = () => {
           {passwordArray.length === 0 && <div>No Passwords to show</div>}
           {passwordArray.length != 0 && (
             <div className="w-full overflow-x-auto">
-            <table className="table-auto w-full border border-green-500 bg-green-100 overflow-hidden rounded-md text-left">
-            <thead className="bg-green-800 text-white">
-          <tr>
-            <th className="px-4 py-2">Site</th>
-            <th className="px-4 py-2">Username</th>
-            <th className="px-4 py-2">Password</th>
-            <th className="px-4 py-2 text-center">Actions</th>
-          </tr>
-        </thead>
-              <tbody>
-                {passwordArray.map((item, index) => {
-                  return (
-                    <tr key={index}>
-                      <td className="px-4 py-2 border-t">
-                        {/* Site */}
-                        <div className="flex items-center gap-2">
-                          <a
-                            href={item.site}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 underline"
+              <table className="table-auto w-full border border-green-500 bg-green-100 overflow-hidden rounded-md text-left">
+                <thead className="bg-green-800 text-white">
+                  <tr>
+                    <th className="px-4 py-2">Site</th>
+                    <th className="px-4 py-2">Username</th>
+                    <th className="px-4 py-2">Password</th>
+                    <th className="px-4 py-2 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {passwordArray.map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        <td className="px-4 py-2 border-t">
+                          {/* Site */}
+                          <div className="flex items-center gap-2">
+                            <a
+                              href={item.site}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-500 underline"
+                            >
+                              {item.site}
+                            </a>
+                            <i
+                              className="fa-regular fa-copy cursor-pointer"
+                              onClick={() => {
+                                copyText(item.site);
+                              }}
+                              title="Copy URL"
+                            ></i>
+                          </div>
+                        </td>
+
+                        <td className="px-4 py-2 border-t">
+                          {/* Username */}
+                          <div className="flex items-centerr justify-between gap-2">
+                            <span>{item.username}</span>
+                            <i
+                              className="fa-regular fa-copy cursor-pointer"
+                              onClick={() => {
+                                copyText(item.username);
+                              }}
+                              title="Copy username"
+                            ></i>
+                          </div>
+                        </td>
+
+                        <td className="px-4 py-2 border-t">
+                          {/* Password */}
+                          <div className="flex items-center justify-between gap-2">
+                            <span>{item.password}</span>
+                            <i
+                              className="fa-regular fa-copy cursor-pointer"
+                              onClick={() => {
+                                copyText(item.password);
+                              }}
+                              title="Copy password"
+                            ></i>
+                          </div>
+                        </td>
+                        <td className="px-4 py-2 border-t text-center">
+                          <span
+                            onClick={() => {
+                              editPassword(item.id);
+                            }}
                           >
-                            {item.site}
-                          </a>
-                          <i
-                            className="fa-regular fa-copy cursor-pointer"
+                            <i
+                              className="fa-solid fa-pen-to-square cursor-pointer"
+                              title="Edit password"
+                            ></i>
+                          </span>
+                          <span
                             onClick={() => {
-                              copyText(item.site);
+                              deletePassword(item.id);
                             }}
-                            title="Copy URL"
-                          ></i>
-                        </div>
-                      </td>
-
-                      <td className="px-4 py-2 border-t">
-                        {/* Username */}
-                        <div className="flex items-centerr justify-between gap-2">
-                          <span>{item.username}</span>
-                          <i
-                            className="fa-regular fa-copy cursor-pointer"
-                            onClick={() => {
-                              copyText(item.username);
-                            }}
-                            title="Copy username"
-                          ></i>
-                        </div>
-                      </td>
-
-                      <td className="px-4 py-2 border-t">
-                        {/* Password */}
-                        <div className="flex items-center justify-between gap-2">
-                          <span>{item.password}</span>
-                          <i
-                            className="fa-regular fa-copy cursor-pointer"
-                            onClick={() => {
-                              copyText(item.password);
-                            }}
-                            title="Copy password"
-                          ></i>
-                        </div>
-                      </td>
-                      <td className="px-4 py-2 border-t text-center">
-                        <span
-                          onClick={() => {
-                            editPassword(item.id);
-                          }}
-                        >
-                          <i className="fa-solid fa-pen-to-square cursor-pointer" title="Edit password"></i>
-                        </span>
-                        <span
-                          onClick={() => {
-                            deletePassword(item.id);
-                          }}
-                        >
-                          <i className="fa-solid fa-trash cursor-pointer pl-4" title="Delete password"></i>
-                        </span>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                          >
+                            <i
+                              className="fa-solid fa-trash cursor-pointer pl-4"
+                              title="Delete password"
+                            ></i>
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
